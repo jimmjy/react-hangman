@@ -1,0 +1,26 @@
+.App {
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+	background: red;
+	transform-origin: top left;
+	animation: swing 2s infinite alternate ease-in-out;
+}
+
+@keyframes swing {
+	from {
+		transform: rotate(20deg);
+	}
+
+	to {
+		transform: rotate(67.5deg);
+	}
+}
