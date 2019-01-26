@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import { fetchWords } from '../actions';
 import './App.scss';
 
 class App extends Component {
@@ -9,6 +11,7 @@ class App extends Component {
 
 	componentDidMount() {
 		window.addEventListener('keypress', this.keyPressEvent);
+		this.props.fetchWords(2);
 	}
 	render() {
 		console.log('hi');
@@ -21,4 +24,13 @@ class App extends Component {
 	}
 }
 
-export default App;
+const mapStateToProps = state => {
+	return {
+		word: state.words,
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	{ fetchWords },
+)(App);
