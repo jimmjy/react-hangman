@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import LetterBoard from './LetterBoard';
+import RemainingGuesses from './RemainingGuesses';
 import { fetchWords, guessLetters } from '../actions';
 import './App.scss';
 
@@ -20,6 +21,7 @@ class App extends Component {
 			<div className="App">
 				<LetterBoard puzzle={this.props.puzzle} />
 				<div className="box">test</div>
+				<RemainingGuesses />
 			</div>
 		);
 	}
