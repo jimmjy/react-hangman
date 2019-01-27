@@ -1,7 +1,7 @@
-export default (state = [], action) => {
+export default (state = {}, action) => {
 	switch (action.type) {
 		case 'FETCH_WORD':
-			return [action.payload];
+			return { word: action.payload.puzzle };
 		default:
 			return state;
 	}

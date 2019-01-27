@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchWords } from '../actions';
+import LetterBoard from './LetterBoard';
+import { fetchWords, guessLetters } from '../actions';
 import './App.scss';
 
 class App extends Component {
 	keyPressEvent = e => {
 		console.log(e.key);
+		this.props.guessLetters(e.key);
 	};
 
 	componentDidMount() {
-		window.addEventListener('keypress', this.keyPressEvent);
 		this.props.fetchWords(2);
+		window.addEventListener('keypress', this.keyPressEvent);
 	}
 	render() {
-		console.log('hi');
 		return (
 			<div className="App">
-				<h1>hi</h1>
+				<LetterBoard puzzle={this.props.puzzle} />
 				<div className="box">test</div>
 			</div>
 		);
@@ -26,11 +27,11 @@ class App extends Component {
 
 const mapStateToProps = state => {
 	return {
-		word: state.words,
+		puzzle: state.puzzle,
 	};
 };
 
 export default connect(
 	mapStateToProps,
-	{ fetchWords },
+	{ fetchWords, guessLetters },
 )(App);
