@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import LetterBoard from './LetterBoard';
-import RemainingGuesses from './RemainingGuesses';
+import GameBoard from './gameboard/GameBoard';
 import { fetchWords, guessLetters, resetGuessedLetters, resetGuesses } from '../actions';
 import './App.scss';
 
@@ -27,25 +26,10 @@ class App extends Component {
 	};
 
 	render() {
-		const playing =
-			//display inplay letters and remaining guesses
-			this.props.remainingGuesses > 0 ? (
-				<div className="game">
-					<LetterBoard />
-					<RemainingGuesses />
-				</div>
-			) : (
-				//display game over
-				<div className="game-over">
-					<h1>Game Over, try again :(</h1>
-					<button onClick={this.newGameHandler}>New Game</button>
-				</div>
-			);
-
 		return (
 			<div className="App">
 				<div className="box">test</div>
-				{playing}
+				<GameBoard newGameHandler={this.newGameHandler} />
 			</div>
 		);
 	}
