@@ -27,9 +27,11 @@ export const guessLetters = char => (dispatch, getState) => {
 			dispatch({ type: 'DECRESS_GUESSES' });
 		}
 	}
-
-	console.log(getState().guessedLetters);
-	console.log(getState().puzzle.word.includes(char));
 };
 
-//need to blank out characters from state words and display * instead until they have been guessed
+export const resetGuesses = () => {
+	return { type: 'RESET_GUESSES' };
+};
+export const resetGuessedLetters = () => {
+	return { type: 'RESET_GUESSED_LETTERS' };
+};

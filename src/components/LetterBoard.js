@@ -1,17 +1,40 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const LetterBoard = props => {
-	return (
-		<div className="letter-board">
-			{props.puzzle.word ? (
-				props.puzzle.word.split('').map(letter => {
-					return <p className="letters">{letter}</p>;
-				})
-			) : (
-				<p>{'Loading...'}</p>
-			)}
-		</div>
+	//display * for letters until they are guessed
+	const revelLetters = props.word ? (
+		props.word.split('').map((letter, i) => {
+			if (
+				props.guessedLetters.includes(letter.toLowerCase()) ||
+				props.guessedLetters.includes(letter.toUpperCase()) ||
+				letter === ' '
+			) {
+				return (
+					<p className="letters" key={letter}>
+						{letter}
+					</p>
+				);
+			} else {
+				return (
+					<p className="letters" key={i}>
+						*
+					</p>
+				);
+			}
+		})
+	) : (
+		<p>'Loading...'</p>
 	);
+
+	return <div className="letter-board">{revelLetters}</div>;
 };
 
-export default LetterBoard;
+const mapStateToProps = state => {
+	return {
+		word: state.puzzle.word,
+		guessedLetters: state.guessedLetters,
+	};
+};
+
+export default connect(mapStateToProps)(LetterBoard);
