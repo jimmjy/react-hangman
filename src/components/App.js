@@ -28,8 +28,12 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className="box">test</div>
-				<GameBoard newGameHandler={this.newGameHandler} />
+				<h1 className="header">
+					<span className="swivel">H</span>angman
+				</h1>
+				<div className="body">
+					<GameBoard newGameHandler={this.newGameHandler} />
+				</div>
 			</div>
 		);
 	}

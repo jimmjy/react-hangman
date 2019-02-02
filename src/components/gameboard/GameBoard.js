@@ -25,7 +25,8 @@ const GameBoard = props => {
 		? props.word.split('').filter(letter => {
 				return (
 					!props.guessedLetters.includes(letter.toLowerCase()) &&
-					!props.guessedLetters.includes(letter.toUpperCase())
+					!props.guessedLetters.includes(letter.toUpperCase()) &&
+					letter !== ' '
 				);
 		  })
 		: null;
