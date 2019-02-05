@@ -15,7 +15,7 @@ const GameBoard = props => {
 		) : (
 			//display game over
 			<div className="game-over">
-				<h1>Game Over, try again :(</h1>
+				<h1>Game Over, try again</h1>
 				<button onClick={props.newGameHandler}>New Game</button>
 			</div>
 		);
@@ -37,7 +37,7 @@ const GameBoard = props => {
 		playing
 	) : (
 		//display the user has won
-		<div>
+		<div className="game-won">
 			<h1>You won!!</h1> <button onClick={props.newGameHandler}>New Game</button>
 		</div>
 	);

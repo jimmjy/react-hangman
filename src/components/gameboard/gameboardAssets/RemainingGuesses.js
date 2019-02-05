@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 const RemainingGuesses = props => {
 	return (
-		<div>
-			<p>Remaining Guesses: {props.guesses}</p>
+		<div className="remaining-guesses">
+			<p className="remaining-guess">Remaining Guesses: {props.guesses}</p>
 		</div>
 	);
 };

@@ -1,10 +1,18 @@
-.App {
+body {
+	height: 100vh;
 	background: black;
 }
 
-.body {
-	width: 100vw;
+.App {
 	height: 100vh;
+}
+
+.game {
+	padding-top: 4rem;
+}
+
+.game-body {
+	width: 100%;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -15,7 +23,7 @@
 .header {
 	text-align: center;
 	margin: 0;
-	padding: 2rem;
+	padding: 4rem;
 	font-size: 4rem;
 	font-family: 'Russo One', sans-serif;
 	color: purple;
@@ -28,7 +36,7 @@
 	animation: swing 2s infinite alternate ease-in-out;
 	padding: 0;
 	margin: 0;
-	letter-spacing: -.1rem;
+	letter-spacing: -0.1rem;
 }
 
 //animation
@@ -43,13 +51,6 @@
 	}
 }
 
-.hi {
-	position: relative;
-	top: 10px;
-	left: 0;
-	z-index: 1;
-}
-
 .letter-board {
 	display: flex;
 }
@@ -62,7 +63,7 @@
 	font-size: 1.5rem;
 	z-index: 10;
 	margin: 0 0.5rem;
-	padding: 0 .5rem;
+	padding: 0 0.5rem;
 	border-bottom: 1px solid white;
 }
 
@@ -71,8 +72,22 @@
 	display: block;
 	z-index: 10;
 	margin: 0.5rem;
-	padding: .5rem;
+	padding: 0.5rem;
 	border-bottom: 1px solid black;
 	width: 1rem;
 	height: 1rem;
+}
+
+.remaining-guesses {
+	color: white;
+	padding: 4rem;
+}
+
+.game-over,
+.game-won {
+	border: 1px solid purple;
+	border-radius: 2rem;
+	padding: 2rem;
+	color: purple;
+	font-family: 'Russo One', sans-serif;
 }

@@ -31,7 +31,7 @@ class App extends Component {
 				<h1 className="header">
 					<span className="swivel">H</span>angman
 				</h1>
-				<div className="body">
+				<div className="game-body">
 					<GameBoard newGameHandler={this.newGameHandler} />
 				</div>
 			</div>
