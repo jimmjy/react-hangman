@@ -91,3 +91,15 @@ body {
 	color: purple;
 	font-family: 'Russo One', sans-serif;
 }
+
+.btn {
+	padding: 1rem;
+	font-family: 'Zilla Slab', serif;
+	border-radius: 0.7rem;
+	box-shadow: 1px 1px 10px 1px blue;
+}
+
+.btn:active,
+.btn:link {
+	outline: none;
+}

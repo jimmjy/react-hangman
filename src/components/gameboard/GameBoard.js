@@ -15,8 +15,11 @@ const GameBoard = props => {
 		) : (
 			//display game over
 			<div className="game-over">
+				<h1>The answer was: {props.word}</h1>
 				<h1>Game Over, try again</h1>
-				<button onClick={props.newGameHandler}>New Game</button>
+				<button className="btn" onClick={props.newGameHandler}>
+					New Game
+				</button>
 			</div>
 		);
 
@@ -38,7 +41,10 @@ const GameBoard = props => {
 	) : (
 		//display the user has won
 		<div className="game-won">
-			<h1>You won!!</h1> <button onClick={props.newGameHandler}>New Game</button>
+			<h1>You won!!</h1>{' '}
+			<button className="btn" onClick={props.newGameHandler}>
+				New Game
+			</button>
 		</div>
 	);
 };
